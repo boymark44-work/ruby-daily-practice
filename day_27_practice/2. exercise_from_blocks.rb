@@ -32,8 +32,6 @@ p (0..10).step(2).to_a.join # => "0246810"
 
 p 0.step(10, 2).to_a.join # => "0246810"
 
-some changes
-
 
 #* Solution: Use .step method to print even elements in a single-line block.
 def increments_of_two
@@ -75,3 +73,4 @@ end
 
 
 increments_of_two # => 0246810
+
