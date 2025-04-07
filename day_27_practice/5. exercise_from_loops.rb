@@ -2,13 +2,24 @@
 puts "\nWhile Loop: "
 
 #* Solution: Implement a simple while loop that counts from 1 to 10:
+i = 1 
 
+while i <= 10
+  puts i 
 
+  i += 1
+end
 puts
 
 
 #* Solution: Implement a simple while loop that appends the character "a" for every iteration. Do it in 5 iterations.
+string = "a"
 
+while string.length <= 5
+  puts string
+
+  string << "a"
+end
 
 
 
@@ -20,7 +31,16 @@ money_sentence = "I love $ in the morning, $ in the afternoon, and $ in the even
 
 
 #* Solution: Iterate over the string without using the "next" keyword.
+current_index = 0 
+final_index = money_sentence.length - 1 
 
+while current_index <= final_index
+  if money_sentence[current_index] == "$"
+    puts "Dollars is found at #{current_index}"
+  end
+
+  current_index += 1
+end
 
 puts
 
@@ -28,6 +48,18 @@ puts
 #* Solution: Use the "next" keyword.
 money_sentence = "I love $ in the morning, $ in the afternoon, and $ in the evening."
 
+current_index = 0 
+final_index = money_sentence.length - 1 
+
+while current_index <= final_index
+  if money_sentence[current_index] != "$"
+    current_index +=1 
+    next 
+  end
+
+  puts "Dollars is found at #{current_index}."
+  current_index += 1
+end
 
 
 
@@ -37,6 +69,18 @@ puts "\n\nThe Break Keyword: "
 money_sentence = "I love $ in the morning, $ in the afternoon, and $ in the evening."
 
 #* Solution: Use the "break" keyword. 
+current_index = 0 
+final_index = money_sentence.length - 1
+first_money_index = nil
+
+while current_index <= final_index
+  if money_sentence[current_index] == "$"
+    first_money_index = current_index
+    break 
+  end
+
+  current_index += 1
+end
 
 
 puts first_money_index # => 7
@@ -58,7 +102,11 @@ puts "\n\nRecursion: Factorial. "
 #*              return 1 (Base case reached)
 
 #* Solution:
+def factorial(num)
+  return num if num == 1 
 
+  num * factorial(num - 1)
+end
 
 
 puts factorial(4) # => 24
@@ -72,7 +120,19 @@ puts "\n\nRecursion: Reversing a String. "
 
 
 #* Solution: Iterate through the string starting from the last index.
+def reverse_string(string)
+  first_index = 0 
+  current_index_from_rear = string.length - 1
+  reversed_string = "" 
 
+  while current_index_from_rear >= first_index
+    reversed_string << string[current_index_from_rear]
+
+    current_index_from_rear -= 1 
+  end
+
+  reversed_string
+end
 
 
 puts reverse_string("straw hat") # => tah warts
@@ -80,7 +140,15 @@ puts
 
 
 #* Solution: Use the each_char method:
+def reverse_string(string)
+  reversed_string = "" 
 
+  string.each_char do |char|
+    reversed_string = char + reversed_string
+  end
+
+  reversed_string
+end
 
 
 puts reverse_string("straw hat") # => tah warts
@@ -88,7 +156,11 @@ puts
 
 
 #* Solution: Use the recursive approach: 
+def reverse_string(string)
+  return string if string.length <= 1
 
+  string[-1] + reverse_string(string[0...-1])
+end
 
 
 puts reverse_string("straw hat") # => tah warts
@@ -97,7 +169,24 @@ puts reverse_string("straw hat") # => tah warts
 
 #* Exercise 6: FizzBuzz Problem.
 puts "\n\nFizzBuzz Problem: "
+def fizzbuzz(num)
+  i = 1 
 
+  while i <= num
+    if i % 15 == 0
+      puts "FizzBuzz"
+    elsif i % 3 == 0 
+      puts "Fizz"
+    elsif i % 5 == 0
+      puts "Buzz"
+    else 
+      puts i
+    end
+
+    i += 1
+  end
+
+end
 
 
 puts fizzbuzz(30)
