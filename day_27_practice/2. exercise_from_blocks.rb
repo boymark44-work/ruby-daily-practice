@@ -30,6 +30,7 @@ puts "\n\nUsing a range, step, to_a, and join: "
 #* Solution: Combine all the methods above to generate the answer.
 p (0..10).step(2).to_a.join # => "0246810"
 
+p 0.step(10, 2).to_a.join # => "0246810"
 
 #* Solution: Use .step method to print even elements in a single-line block.
 def increments_of_two
