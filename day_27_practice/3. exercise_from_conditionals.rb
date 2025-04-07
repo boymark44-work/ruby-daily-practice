@@ -19,7 +19,25 @@ def div(a, b)
 end
 
 #* Write your function here: 
+def custom_calculator(num1, num2, operation)
 
+  if operation == "add"
+    add(num1, num2)
+  elsif operation == "subtract"
+    sub(num1, num2)
+  elsif operation == "multiply"
+    mul(num1, num2)
+  elsif operation == "divide"
+    if num2.zero?
+      "Cannot be divided by zero"
+    else 
+      div(num1, num2)
+    end
+  else 
+    "Invalid Operation"
+  end
+
+end
 
 
 puts custom_calculator(3, 5, "add") # => 8
@@ -50,7 +68,17 @@ def div(a, b)
 end
 
 #* Write your function here: 
+def custom_calculator2(num1, num2, operation)
+  
+  case operation
+  when :add then add(num1, num2)
+  when :subtract then sub(num1, num2)
+  when :multiply then mul(num1, num2)
+  when :divide then num2.zero? ? "Cannot be divided by zero" : div(num1, num2)
+  else "Invalid Operation"
+  end 
 
+end
 
 
 puts custom_calculator2(3, 5, :add) # => 8
@@ -81,6 +109,18 @@ def div(a, b)
 end
 
 #* Write your function here: 
+def custom_calculator3(num1, num2, operation)
+  return "Invalid Operation" unless ["add", "subtract", "multiply", "divide"].include?(operation)
+  return "Cannot be divided by zero" if operation == "divide" and num2.zero? 
+
+  case operation
+  when "add" then add(num1, num2)
+  when "subtract" then sub(num1, num2)
+  when "multiply" then mul(num1, num2)
+  when "divide" then div(num1, num2)
+  end
+
+end
 
 
 puts custom_calculator3(3, 5, "add") # => 8
@@ -102,7 +142,9 @@ puts "\n\nMultiple Conditions: "
 # It should return false otherwise.
 
 #* Solution:
-
+def divisible_by_three_and_four(num)
+  num % 3 == 0 and num % 4 == 0
+end
 
 
 puts divisible_by_three_and_four(3) # => false
@@ -137,7 +179,15 @@ puts "\n\nIf-Statements: "
 # If the integer is odd, the method should return the number - 3
 
 #* Solution:
+def even_or_odd_operations(num)
+  
+  if num.even?
+    num + 2
+  else 
+    num - 3 
+  end
 
+end
 
 
 puts even_or_odd_operations(2) # => 4
@@ -156,7 +206,17 @@ puts "\n\nIf-Elsif-Else Statements: "
 # If the number is zero, return the string "Zero Hero"
 
 #* Solution:
+def numeric_energy(num)
+  
+  if num.positive?
+    "Positive"
+  elsif num.negative?
+    "Negative"
+  else 
+    "Zero Hero"
+  end
 
+end
 
 
 puts numeric_energy(5) # => Positive
@@ -168,7 +228,15 @@ puts
 
 
 #* Solution: Solving Numeric Energy using "case method" for better readability.
+def numeric_energy(num)
 
+  case 
+  when num.positive? then "Positive"
+  when num.negative? then "Negative"
+  else "Zero Hero"
+  end
+
+end
 
 
 puts numeric_energy(5) # => Positive
