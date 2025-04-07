@@ -7,21 +7,22 @@ birds = %w[eagle sparrow pigeon hawk penguin]
 
 
 #* Solution: Use the "each" method:
+bird_cage = [] 
 
-
-
+birds.each { |bird| bird_cage << bird.length }
+p bird_cage # => [5, 7, 6, 4, 7]
 puts
 
 
 #* Solution: Use the "map" method:
-
-
-
+bird_cage = birds.map { |bird| bird.length }
+p bird_cage # => [5, 7, 6, 4, 7]
 puts
 
 
 #* Solution: Use the "collect" method:
-
+bird_cage = birds.collect { |bird| bird.length }
+p bird_cage # => [5, 7, 6, 4, 7]
 
 
 #* Exercise 2: The Select and Reject Methods. 
@@ -30,16 +31,14 @@ puts "\n\nThe Select and Reject: "
 words = %w[racecar selfless sentences level]
 
 #* Solution: Use the "select" method to select words that are palindrome.
-
-
-
+palindromes = words.select { |word| word == word.reverse }
+p palindromes # => ["racecar", "level"]
 puts
 
 
 #* Solution: Use the "reject" method to reject words that are palindrome.
-
-
-
+not_palindromes = words.reject { |word| word == word.reverse }
+p not_palindromes # => ["selfless", "sentences"]
 puts
 
 
@@ -48,7 +47,8 @@ puts
 #* Solution: Use the "reject" and "include?" method.
 animals = %w[cheetah cat lion elephant dog cow]
 
-
+zoo = animals.reject { |animal| animal.include?("c") }
+p zoo # => 
 
 #* Exercise 3: The Partition Method.
 puts "\n\nThe Partition Method: "
@@ -57,13 +57,13 @@ puts "\n\nThe Partition Method: "
 foods = %w[Steak Vegetables Steak-Burger Kale Tofu Tuna-Steaks]
 
 #* Solution: Use the "select" and "reject" method to separate the good foods from the bad:
-
-
+p good_foods = foods.select { |food| food.include?("Steak") }
+p bad_foods = foods.reject { |food| food.include?("Steak") }
 puts
 
 
 #* Solution: Use the "partition" to directly partition the good foods from the bad foods.
-
+p partitioned_foods = foods.partition { |food| food.include?("Steak") }
 
 
 
@@ -75,9 +75,10 @@ words = %w[dictionary refrigerator platypus microwave]
 
 
 #* Solution: Use the "find" method:
-
+p found = words.find { |word| word.include?("e") } # => "refrigerator"
 
 #* Solution: Use the "detect" method: 
+p found = words.detect { |word| word.include?("e") } # => "refrigerator"
 
 
 
@@ -91,8 +92,15 @@ puts "\n\nThe Unlimited Method Arguments: "
 #* Unlimited method argument syntax: *argument_name.
 
 #* Solution: Print the arguments and return the rolling sum. 
+def adder(*numbers) 
+  p numbers 
 
+  rolling_sum = 0 
 
+  numbers.each { |num| rolling_sum += num }
+
+  rolling_sum
+end
 
 p adder(1) # => [1], 1
 p adder(1, 2) # => [1, 2], 3
@@ -104,7 +112,15 @@ puts
 
 
 #* Solution: Same operation as above. 
+def adder(*numbers)
+  p numbers  
 
+  rolling_sum = 0 
+
+  numbers.each { |num| rolling_sum += num }
+
+  rolling_sum
+end
 
 
 p adder(1, 2, 3, 4) # => [], 0
@@ -122,7 +138,9 @@ puts "\n\nCustom Max Method: "
 #* Do not use the max method in your solution!
 
 #* Solution: Use the built-in max method.
-
+def using_builtin_array(array)
+  array.max 
+end
 
 
 p using_builtin_array([434.12, 723.99, 84.12, 649.92]) # => 723.99
@@ -133,7 +151,17 @@ puts
 
 
 #* Solution: Use a custom approach.
+def custom_max(array)
+  largest_element = array[0]
 
+  array.each do |element|
+    if element >= largest_element 
+      largest_element = element
+    end
+  end
+
+  largest_element
+end
 
 
 p custom_max([434.12, 723.99, 84.12, 649.92]) # => 723.99
@@ -152,7 +180,15 @@ puts "\n\nThe Each Method: "
 #* double its value from the original array.
 
 #* Solution: Use the "each" method. 
+def double_elements(array)
+  doubled = [] 
 
+  array.each do |element|
+    doubled << element * 2 
+  end
+
+  doubled
+end
 
 
 p double_elements([1, 2, 3, 4, 5]) # => [2, 4, 6, 8, 10]
@@ -165,7 +201,15 @@ puts
 #* have more than 7 characters.
 
 #* Solution: Use the "each" method. 
+def extract_long_words(array)
+  result = [] 
 
+  array.each do |word|
+    result << word unless word.length <= 7            
+  end
+
+  result 
+end
 
 
 p extract_long_words(["spaghetti", "penne", "fettuccine", "ziti"]) # => ["spaghetti", "fettuccine"]
@@ -180,8 +224,17 @@ puts
 #* (see example below). Make sure to capitalize each pasta and sauce
 
 #* Solution: Use the "each" method. 
+def pastas_and_sauces(pasta, sauce)
+  combinations = []
 
+  pasta.each do |pasta_type|
+    sauce.each do |sauce_type|
+      combinations << "#{pasta_type.capitalize} with #{sauce_type.capitalize} sauce."
+    end
+  end
 
+  combinations
+end
 
 p pastas_and_sauces(["fettucine", "spaghetti", "penne"], ["alfredo", "bolognese", "pesto"]) # => ["Fettucine with Alfredo sauce.", "Fettucine with Bolognese sauce.", "Fettucine with Pesto sauce.", "Spaghetti with Alfredo sauce.", "Spaghetti with Bolognese sauce.", "Spaghetti with Pesto sauce.", "Penne with Alfredo sauce.", "Penne with Bolognese sauce.", "Penne with Pesto sauce."]
 
@@ -197,7 +250,19 @@ puts "\n\nThe Each with Index: "
 #* If the array has no elements, the final sum should be 0.
 
 #* Solution: Assigned to an array the numbers that are multiplied with their index then use the "each_with_index" method.
+def product_of_number_and_index(array)
+  double_elements = [] 
 
+  array.each_with_index do |index, element|
+    double_elements << index * element 
+  end
+
+  rolling_sum = 0 
+
+  double_elements.each { |num| rolling_sum += num }
+
+  rolling_sum
+end
 
 
 p product_of_number_and_index([1, 2, 3]) # => 8
@@ -206,7 +271,15 @@ puts
 
 
 #* Solution: Use the "each_with_index" method.
+def product_of_number_and_index(array)
+  rolling_sum = 0 
 
+  array.each_with_index do |index, num|
+    rolling_sum += index * num
+  end
+
+  rolling_sum
+end
 
 
 p product_of_number_and_index([1, 2, 3]) # => 8
@@ -221,7 +294,13 @@ puts "\n\nFiltering Methods: "
 #* The method should return an array with all the strings in reversed order.
 
 #* Solution: Use the "map" or "collect" methods.
+def reverse_all(array)
 
+  array.map do |word|
+    word.reverse
+  end
+
+end
 
 
 p reverse_all(["cat", "bat", "tub"]) # => ["tac", "tab", "but"]
@@ -234,7 +313,11 @@ puts
 #* The method should return an array of the strings that include the letter.
 
 #* Solution: Use "select" method.
+def words_with_letter(array, letter)
 
+  array.select { |string| string.include?(letter) }
+
+end
 
 
 p words_with_letter(["cat", "bat", "tub"], "a") # => ["cat", "bat"]
@@ -250,7 +333,11 @@ puts
 #* Return an array consisting of the two arrays.
 
 #* Solution: Use the "partition" method.
+def evens_and_odds(array)
 
+  array.partition { |num| num.even? }
+
+end
 
 
 p evens_and_odds([1, 2, 3, 4, 5]) # => [[2, 4], [1, 3, 5]]
@@ -267,6 +354,13 @@ puts "\n\nUnlimited Method Arguments For Strings: "
 #* of the lengths of the strings.
 
 #* Solution:
+def sum_of_string_lengths(*strings)
+  rolling_sum = 0 
+
+  strings.each { |string| rolling_sum += string.length }
+
+  rolling_sum
+end
 
 
 
@@ -284,7 +378,9 @@ puts "\n\nAny? and All?: "
 #* whether any array element has more than 7 characters.
 
 #* Solution: Use the any? method.
-
+def has_greater_than_seven_characters(array)
+  array.any? { |string| string.length > 7 }
+end
 
 
 p has_greater_than_seven_characters(["ruby", "exercise", "cat"]) # => true
@@ -298,8 +394,12 @@ puts
 #* are even.
 
 #* Solution: Use the all? method.
-
+def against_all_odds(array)
+  array.all? { |num| num.even? }
+end
 
 
 p against_all_odds([3, 5, 7, 2]) # => false
 p against_all_odds([2, 4, 6]) # => true
+
+
