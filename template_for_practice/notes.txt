@@ -390,22 +390,6 @@ The Top 40 Algorithms for Junior Developer Interview:
 8. How do you reverse a Linked List?
 
 
-
-
-
-Points taken while practicing the Ruby Basics: 
-- Make sure to label every exercises with their corresponding descriptions so that it wont be confusing when looking for results.
-- 
-
-
-
-
-Could you summarize this paragraph in a form of an insight: 
-
-
-
-
-
 The Top 40 Algorithms for Junior Developer Interview: 
 
 1. Binary Searches.
