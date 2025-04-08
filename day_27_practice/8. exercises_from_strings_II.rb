@@ -8,7 +8,9 @@ puts "Custom Count: "
 #* built-in count method in your solution.
 
 #* Solution: Solve using the built-in "count" method.
-
+def custom_count(word, letter)
+    word.count(letter)
+end
 
 
 p custom_count("Hello World", "l") # => 3
@@ -20,7 +22,16 @@ puts
 
 
 #* Solution: Solve using a custom count approach.
+def custom_count(string, search_character)
 
+    count = 0
+
+    string.each_char do |char|
+        count += 1 if search_character.include?(char)
+    end
+
+    count
+end
 
 
 p custom_count("Hello World", "l") # => 3
@@ -42,7 +53,9 @@ puts "\n\nCustom Delete: "
 #* delete method in your solution.
 
 #* Solution: Solve using the built-in "delete" method.
-
+def custom_delete(word, letter)
+    word.delete(letter)
+end
 
 
 p custom_delete("cottage cheese", "c") # => "ottage heese"
@@ -53,7 +66,16 @@ puts
 
 
 #* Solution: Solve using a custom "delete" approach.
+def custom_delete(string, search_character)
 
+    final_string = "" 
+
+    string.each_char do |char|
+        final_string << char unless search_character.include?(char)
+    end
+
+    final_string
+end
 
 
 p custom_delete("cottage cheese", "c") # => "ottage heese"
@@ -73,7 +95,9 @@ puts "\n\nCustom Index: "
 #* return nil. Do not use the built-in index method in your solution.
 
 #* Solution: Solve using the built-in "index" method.
-
+def custom_index(word, letter)
+    word.index(letter)
+end
 
 
 p custom_index("I am very handsome", "I") # => 0
@@ -85,7 +109,19 @@ puts
 
 
 #* Solution: Solve using custom index approach.
+def custom_index(string, search_term)
 
+    return nil unless string.include?(search_term)
+
+    search_term_length = search_term.length   
+
+    string.chars.each_with_index do |char, index|
+        matched_search_index = string[index, search_term_length]
+
+        return index if search_term == matched_search_index
+    end
+
+end
 
 
 p custom_index("I am very handsome", "I") # => 0
@@ -107,7 +143,9 @@ puts "\n\nCustom Join: "
 #* built-in join method in your solution.
 
 #* Solution: Solve using the built-in "join" method.
-
+def custom_join(array, delimiter)
+    array.join(delimiter)
+end
 
 
 p custom_join(["red", "green", "blue"], "!") # => "red!green!blue"
@@ -117,7 +155,18 @@ puts
 
 
 #* Solution: Solve using custom join approach.
+def custom_join(strings, delimiter)
 
+    joined_strings = "" 
+    final_index = strings.length - 1
+
+    strings.each_with_index do |string, index|
+        joined_strings << string
+        joined_strings << delimiter unless index == final_index
+    end
+
+    joined_strings
+end
 
 
 p custom_join(["red", "green", "blue"], "!") # => "red!green!blue"
@@ -137,7 +186,9 @@ puts "\n\nCustom Split: "
 #* will never be an empty string.
 
 #* Solution: Solve using the built-in "split" method.
-
+def custom_split(string, delimiter)
+    string.split(delimiter)
+end
 
 
 p custom_split("Hi, my name is Boris", " ") # => ["Hi,", "my", "name", "is", "Boris"]
@@ -150,6 +201,20 @@ puts
 #* Solution: Solve using custom split approach.
 def custom_split(text, delimiter)
 
+    final_segment = [] 
+    temporary_segment = "" 
+
+    text.each_char do |current_char|
+        if text[current_char] == delimiter
+            final_segment << temporary_segment unless temporary_segment.empty?
+            temporary_segment = ""
+        else 
+            temporary_segment << current_char
+        end
+    end
+
+    final_segment << temporary_segment unless temporary_segment.empty?
+    final_segment
 end
 
 p custom_split("Hi, my name is Boris", " ") # => ["Hi,", "my", "name", "is", "Boris"]
@@ -172,8 +237,17 @@ puts "\n\nThe Split Method: "
 #*  - The string does not contain any symbols or characters
 
 #* Solution: Use the "split" method to separate the strings and store them into an array.
+def longest_word(string)
+    words = string.split(" ")
+    longest_word = words[0]
 
+    words.each do |current_word|
+        longest_word = current_word unless longest_word.length > current_word.length   
+    end
 
-p longest_word1("Bobby loves very big scary kangaroos too") # => "kangaroos"
-p longest_word1("Ruby is my favorite language") # => "language"
-p longest_word1("Hello") # => "Hello"
+    longest_word
+end
+
+p longest_word("Bobby loves very big scary kangaroos too") # => "kangaroos"
+p longest_word("Ruby is my favorite language") # => "language"
+p longest_word("Hello") # => "Hello"
