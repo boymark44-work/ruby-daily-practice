@@ -1,0 +1,405 @@
+Ruby Programming: 
+|
+|-- Basics
+| |-- Variables and Data Types
+| |-- Operators
+| |-- Control Flow
+| | |-- if, elsif, else
+| | |-- case
+| | |-- while, until, for
+| | |-- next, break
+|
+|-- Object-Oriented Programming (OOP)
+| |-- Classes and Modules
+| |-- Inheritance
+| |-- Mixins
+| |-- Encapsulation
+| |-- Duck Typing
+|
+|-- Ruby Standard Libraries
+| |-- Core Libraries
+| | |-- Kernel
+| | |-- Enumerable
+| | |-- String, Array, Hash, etc.
+| |-- Standard Libraries
+| | |-- Set
+| | |-- Date and Time
+| | |-- File and I/O
+| |-- Exception Handling
+| | |-- begin, rescue, ensure, retry
+| |-- Threads and Concurrency
+| | |-- Thread
+| | |-- Fiber
+| |-- Enumerable and Enumerator
+| |-- Ranges
+| |-- Blocks, Procs, and Lambdas
+|
+|-- Ruby on Rails (RoR)
+| |-- MVC Architecture
+| | |-- Models
+| | |-- Views
+| | |-- Controllers
+| |-- Active Record
+| |-- Migrations
+| |-- ActionView
+| |-- ActiveSupport
+| |-- Routing
+| |-- Asset Pipeline
+| |-- Mailers
+| |-- Active Job
+|
+|-- Web Development
+| |-- Sinatra
+| |-- Rack
+| |-- RESTful Web Services
+| |-- API Development with Grape
+| |-- WebSockets with ActionCable
+| |-- HTML, CSS, and JavaScript Integration
+| |-- Web Development Tools (Rake, Bundler)
+|
+|-- Database Interaction
+| |-- Active Record
+| |-- Sequel
+| |-- Connection Pooling
+| |-- Migrations
+|
+|-- Testing
+| |-- RSpec
+| |-- Cucumber
+| |-- Capybara
+| |-- Factory Bot
+| |-- SimpleCov
+|
+|-- Gem Management
+| |-- RubyGems
+| |-- Bundler
+|
+|-- Design Patterns
+| |-- Creational Patterns
+| |-- Structural Patterns
+| |-- Behavioral Patterns
+| |-- Rails Design Patterns (Service Object, Decorator, Presenter, etc.)
+|
+|-- Front-end Integration
+| |-- Webpacker
+| |-- Sprockets
+| |-- Turbolinks
+| |-- StimulusJS
+|
+|-- Deployment and Hosting
+| |-- Heroku
+| |-- AWS (Elastic Beanstalk, EC2)
+| |-- Docker
+| |-- Capistrano
+|
+|-- Ruby Version Management
+| |-- RVM (Ruby Version Manager)
+| |-- rbenv
+|
+|-- Tools and IDEs
+| |-- RubyMine
+| |-- Visual Studio Code
+| |-- Sublime Text
+| |-- Atom
+|
+|-- Coding Practices and Conventions
+| |-- Code Style (snake_case, etc.)
+| |-- Ruby Naming Conventions
+| |-- Documentation (RDoc, YARD)
+|
+|-- Version Control
+| |-- Git and GitHub
+| |-- Bitbucket
+|
+|-- Ruby Community and Resources
+| |-- Ruby-Doc.org
+| |-- RubyGems.org
+| |-- Ruby on Rails Guides
+| |-- Stack Overflow
+| |-- Books and Tutorials
+|
+└-- Comments
+|-- # Single-line comment
+|-- =begin Multi-line comment =end
+
+
+Notes for Templates:
+
+I. Getting Started
+  1. Basic Arithmetic. (Add, Sub, Mul, Div, Modulo, Parenthesis Precedence and Floating-Point Numbers)
+  2. Escape Characters. (\n, \t, \"\", \'\', "", '') 
+  3. Integers and Floating-Point Numbers. (Integers, Using underscore to identify place values, and Floating-Point Numbers all in positive and negative values)
+  4. String Concatenation Using: Addition Operator("+") and Shovel Operator("<<")
+  5. Print Methods Using: p, print, and puts method
+ 
+II. Variables
+  1. Basic Assignment and Assignment Shortcuts in Variables. (For Numbers(+, -, *, /) and Strings)
+  2. Constants. Capitalization is the key.
+  3. Declaring Variables in Ruby; almost any data-type can be stored inside.
+  4. Parallel Variable Assignment.
+  5. Swapping Variable Values in Ruby. 
+
+III. Object Methods in Ruby 
+  1. Integer Methods in Ruby. (next, succ and pred)
+  2. Intro to Object Methods in Ruby for Strings. (length, upcase and downcase)
+  3. Method Chaining in Ruby; chaining methods on top of each other.
+  4. Object Conversion in Ruby Using. (to_i, to_f and to_s)
+  5. String Interpolation in Ruby; implementing ruby logic inside of a string.
+  6. The Class Method in Ruby. (class)
+  7. The inspect Method in Ruby. It works the same as the p method. Not applicable to equations or operations.
+  8. The nil Object in Ruby. A datatype or object that represents nothingness or void.
+
+IV. Boolean and Predicate Methods in Ruby 
+  1. Common Arithmetic Operations in Ruby. Basic Arithmetic(+, -, *, /, %). Invoking the basic arithmetic operations as methods(.+(), .-(), .*(), ./(), .div(), and .divmod()).
+  2. Floating-Point Number Methods in Ruby. (floor, ceil, round and abs)
+  3. Intro to Booleans in Ruby. (true or false)
+  4. Mathematical Comparisons in Ruby; logical operations using numbers.
+  5. Methods with Arguments in Ruby. (include?, regular puts method with 2 or more arguments)
+  6. Methods with Multiple Arguments in Ruby. (between?)
+  7. Predicate Methods in Ruby. (odd?, even?, positive? and negative?)
+  8. The Equality Operator: "=="
+  9. The Inequality Operator: "!="
+
+V. Methods   
+  1. Method definition in Ruby; defining and creating functions.
+  2. Local variables in Ruby and how do they differ from local variables inside methods.
+  3. Manipulating arguments using String Interpolation techniques.
+  4. Multiple Parameters in Ruby: Nothing really special, just a bunch of parameters to make the function more exciting.
+  5. Optional Parameters and Default Arguments in Ruby. (required, optional_parameter = "default-argument")
+  6. Parameters and Arguments in Ruby. Just the regular definition.
+  7. Return Values in Ruby Part 1: Using the return keyword inside of a method.
+  8. Return Values in Ruby Part 2: Using implicit returning which means without the need to use the return keyword.
+
+  Exercises: 
+  1. Regular Method Definition and Invocation.
+  2. Exercises to supplement our understanding of Optional Parameters and Default Arguments. 
+
+VI. Blocks 
+  1. Introduction to Blocks in Ruby. (Single-line, Multi-line, and A block being a value in a variable)
+    Blocks - Is a procedure or collection of code that is enclosed in either curly braces("{}") or "do-end" statements.
+    They can be passed to methods as arguments and often used in encapsulating and organizing sections of code.
+  2. Block Variables in Ruby. (A variable enclose in double vertical bars that we can use to track the no. of iterations inside the blocks.)
+  3. The times method in Ruby. (times)
+  4. The upto and downto methods in Ruby. (upto, downto)
+  5. The step method in Ruby. (step)
+  
+  Exercises: 
+  1. Declare and invoke two methods that demonstrate how a block works in Ruby. 
+  2. Define a block method that stores all the even elements in every iteration using: 
+    2.1 Chaining a range statement, step, to_a, and join methods. 
+    2.2 Using a step method. 
+    2.3 Using the upto methods.  
+    2.4 Using the conventional definition of an empty string and for every even elements encountered, appending the element to the empty string using the shovel operator("<<").
+    2.5 Using the solution provided by the instructor in which he tracked the no. of iterations using a block variable and represent them as their index then multiplied by 2.
+
+VII. Conditionals 
+  1. The if-statement in Ruby.
+  2. Predicate Methods in an if-statement in Ruby; using predicate methods as a substitute for condition.
+  3. Truthiness and Falseness in Ruby.
+  4. The if-elsif statement in Ruby. 
+  5. The if-else statement in Ruby.
+  6. Multiple Conditions using the "and" or "&&" operator in Ruby.
+  7. Multiple Conditions using the "or" or "||" Operator.
+  8. Parenthesis Precedence in Ruby. 
+  9. The nested "if" statement in Ruby.
+  10. Ternary Operator("?") in Ruby.
+  11. Calling a method from another method in Ruby. It's kind of like calling a method inside of a method.
+  12. The Case Statement in Ruby. 
+  13. The Unless keyword in Ruby.
+  14. Statement Modifiers in Ruby. A short-hand syntax for a single if-statement.
+  15. Conditional Assignment Operator ("||=") in Ruby. 
+
+  Exercises: 
+  1. Defining a divisible by three and four method. 
+  2. Defining a method that whether a length of particular string is greater than 4 and has a Uppercase B in it. 
+  3. Defining a method whether a particular integer is a even or odd.
+  4. Defining a method whether a particular integer is a positive, negative, or zero. 
+
+VIII. Strings I 
+  1. Single and Double-Quotes in Ruby. 
+  2. Multi-line Strings in Ruby.
+  3. String Comparisons in Ruby. Using the Alphabet as basis for precedence and comparison. Uppercase have lower precedence over lowercase.
+  4. String Concatenation Options in Ruby. (+, concat, prepend, <<). With concat and prepend being able to mutate the original state of the object.
+  5. The length and size Methods in Ruby. (length, size)
+  6. Intro to index positions in Ruby to access index positions. (Bracket-Syntax, slice method)
+  7. Extracting multiple characters from a string to extract multiple elements. (Bracket-Syntax, slice)
+  8. Overwriting Characters in a String in Ruby using the Bracket Syntax. (Bracket-Syntax)
+  9. Inserting a Character inside of a String in Ruby using the insert method. (insert)
+  10. The empty and nil methods in Ruby. (empty, nil) to check whether a variable is empty or nil.
+  11. Character Case Methods in Ruby. (upcase, downcase, capitalize, swapcase is from upper to lower and vice-versa)
+  12. The reverse method in Ruby: Using (reverse) to reverse character placements in a string.
+  13. The bang! method in Ruby: The syntax that has the power to alter, mutate, or modify the original state of the object where the bang! method in invoked upon.
+
+  Exercises: 
+  1. Coding Exercises from String Index Positions. 
+    - Defining a method to check whether the first and last index of a string are the same.
+    - Defining a method that can split a number in string form, convert them into integers, and return their sum. 
+  2. Coding Exercises from String Slicing. 
+    - Defining a method that returns the first 3-characters of a string. 
+    - Defining a method that extract the last 5-characters of a string using negative indexing.
+  3. Coding Exercises from String Length and Comparisons. 
+    - Defining a method that checks whether a particular string is greater than seven in length. 
+    - Defining a method whether the first string is greater in length than the second one.
+  
+IX. Loops 
+  1. Loops - A series of instructions that is repeated until a terminating condition is reached.
+  2. The While Loop in Ruby.
+  3. The Next Keyword in Ruby: Using (next) keyword to immediately proceed to the next iteration if a certain condition is met.
+    - The next keyword allows us to control the flow of our code correctly. Without it, the loop wont behave properly.
+  4. The Break Keyword: Using the (break) keyword to terminate a loop completely after fulfilling a certain condition.
+  5. Recursion Part I: Solving a Factorial Problem through Recursive Approach.
+  6. Recursion Part II: Reversing a String through a Recursive Approach.
+
+  Exercise:
+  1. Defining a method that would implement and solve a FizzBuzz Game.  
+  2. Reverse a string. 
+  3. Factorial. 
+
+XI. Arrays I 
+  1. Intro to Arrays in Ruby.
+  2. Nested Arrays in Ruby.
+  3. A shorthand-syntax when defining an array in Ruby. (%w[element1, element2, ... , elementN+1])
+  4. Access individual elements of an array through their index positions: Using (Bracket-Syntax, Negative-Indexing, slice, slice method with negative-indexing, brackets as method invocation).
+  5. Overwriting array elements through their index positions.
+  6. Access individual array elements using the Fetch method: (fetch).
+  7. Access and Overwrite multiple array elements: Using (Bracket Syntax, slice method).
+  8. Access multiple array elements using values_at method: (values_at).
+  9. The first and last methods in Ruby. (first, last).
+  10. Counting the number of elements inside of an array using: (length, size, count) methods in Ruby.
+  11. The empty? and nil? predicate methods: (empty?, nil?).
+  12. The Equality and Inequality Operators in Ruby in an array: (==, !=).
+  13. The Spaceship Operator: ("<=>") also known as the "combined comparison operator" in Ruby.
+  14. Appending an element unto arrays using the Push Method and Shovel Operator: (push, <<). The push method mutates the object from its original state.
+  15. Inserting array elements using the Insert Method. (insert)
+  16. Popping elements from an array using the Pop Method. (pop)
+  17. The Shift and Unshift Methods on Arrays in Ruby. (shift, unshift). Shift removes and returns elements from the beginning while unshift adds elements to the beginning.
+
+  Exercise: 
+  1. Coding Exercises from Creating Arrays: 
+    - Defining an empty array.
+    - Defining an array that contains 3 string elements namely: red, green, blue.
+    - Defining an array that contains 5 integer values. 
+  2. Coding Exercises from Indexing into Array:
+    - Defining a method that concatenates the first and last elements.
+    - Defining a method that returns the product of the even indices of an array. 
+    - Defining a method that returns the first character of a last string element.
+  3. Coding Exercises from Extracting Multiple Elements from Arrays:
+    - Defining a method that if the number of elements inside is even, split the array into two halves. Otherwise, return its first half with a +1 elements and then the second half with the remaining elements.
+  
+XII. Ranges 
+  1. Intro to Ranges in Ruby.
+  2. The Alphabetical Range: It starts from a to z.
+    - The first and last method with and without arguments. (first, last)
+    - Uppercase and Lowercase precedence: "A" through "Z" upto "a" through "z".
+  3. The include? and member? Predicate Methods for Ranges in Ruby. (include?, member?)
+    - Using also the equality operator "===" to evaluate whether a particular element is present within a Range. (===)
+  4. Generating Random Numbers in Ruby using Ranges. (rand)
+    - Using the round method to determine the precise decimals for floating-point values. (round)
+    - The rand method with arguments. The rand method generates a random number. When passed an integer argument n, it generates a random integer between 0 and n-1.
+    - Generating Random Numbers using Ranges.
+  5. Extracting Multiple Characters or Elements in Ruby using Ranges as Arguments: Using (inclusive and exclusive range, slice).
+  6. Case Statements with Ranges in Ruby.
+  7. Converting Ranges into Arrays in Ruby. (to_a) 
+
+XIII. Arrays II 
+  1. The each method in Ruby. (each)
+    - Using the each method to iterate over the elements of an array in a single-line block.
+    - Using the each method to iterate over the elements of an array in a multi-line block. 
+  2. Filtering through elements with each method in Ruby.
+  3. For Loop in Ruby. (for loop)
+  4. The Each_With_Index in Ruby. (each_with_index)
+    - Using the each_with_index method in a single-line block.
+    - Using the each_with_index method in a multi-line block. 
+  5. Iterating over array elements using the While and Until loop. (while and until loop)
+  6. The Map and Collect Methods in Ruby. (map, collect)
+    - The map and collect method allows us to perform a consistent operation over array elements 
+      and automatically creates a designated array variable for it contrary to the usual convention 
+      of declaring an empty array first.
+  7. The Select and Reject Methods in Ruby. (select, reject)
+    - select: array elements that satisfies a condition.
+    - reject: array elements that did not satisfy a condition.
+  8. The Partition Method in Ruby. (partition)
+    - splits an array into two arrays based on matching or not matching a condition.
+  9. The Any? and All? Predicate Methods in Ruby. (any?, all?)
+    - any?: checks whether any array element satisfies a condition.
+    - all? : checks whether every array element or all of them satisfies a condition.
+  10. The Find and Detect Methods in Ruby. (find, detect)
+    - find and detect: checks any array element that satisfy a condition first over others and keep track of it.
+  11. The Index and Find_Index Methods in Ruby. (index, find_index)
+    - index and find_index: returns the index position of a given element.
+  12. The Include? Predicate Method in Ruby. (include?)
+  13. The Max and Min Methods in Ruby. (max, min)
+    - max: returns the greatest value or element in an array.
+    - min: returns the least or smallest value in an array.
+  14. Unlimited Method Arguments in Ruby.
+
+  Exercises: 
+  1. Coding Exercises from Defining a Custom Max Method.
+    - Implementing a custom max method. 
+  2. Coding Exercises from the Each Method.
+    - Defining a method that would take an array of integers and for every element, multiply them by 2 and return the new array.
+    - Defining a method that takes an array of strings and for every string, checks whether their length is greater than 7 and returns only those elements that satisfies the condition.
+    - Defining a method that would return the combination of different pastas and sauces. Make sure to capitalize each pasta and sauces.\
+  3. Coding Exercises from Each With Index.
+    - Define a method that would multiply its elements to its index and return the sum of all the elements.
+  4. Coding Exercises from Filtering Methods.
+    - Define a method that would return an array with all the strings in reversed.
+    - Define a method that accepts and array of strings and a letter. The method should return an array of strings that includes the given letter.
+    - Define a method that accepts an array of numbers. The method should segment the given array into two. The first array should contain even numbers and the second one are the odd numbers. We expect an array that is segmented into two as an output.
+  5. Coding Exercises from Unlimited Method Arguments.
+    - Define a sum_of_string_lengths method that accepts any number of strings. The method return the sum of the lengths of the strings.
+  6. Coding Exercises from With Any? and All? Methods.
+    - Define a has_greater_than_seven_characters method that accepts an array of strings. 
+      It should return a Boolean reflecting
+      whether any array element has more than 7 characters.
+    - Define an against_all_odds method that accepts an array of numbers. It should return a Boolean reflecting whether all array elements are even.
+
+14. Strings II 
+  1. The Split Method in Ruby. (split)
+  2. The Chars and Each Char Method in Ruby. (chars, each_char)
+    - Using the split and each method to iterate every characters. 
+    - Using the chars and each_char method to iterate every characters. 
+  3. The Join Method on Array in Ruby. (join)
+    - join: merges array elements into a string with an optional use of a delimiter.
+  4. The Count Method on a String in Ruby. (count)
+  5. The Index and rindex Methods in Ruby. (index, rear-index)
+  6. The delete method in Ruby. (delete)
+
+  Exercises: 
+  1.Define a custom_count method. 
+  2.Define a custom_delete method. 
+  3.Define a custom_index method. 
+  4.Define a custom_join method. 
+  5.Define a custom_split method. 
+  6.Define a method that would utilize the built-in split method. 
+
+
+
+
+
+
+The Top 40 Algorithms for Junior Developer Interview: 
+
+1. Binary Searches.
+2. Binary Trees. 
+3. Arrays. 
+4. How would you calculate the number of vowels and consonants in a string?
+5. How would you implement the insertion sort algorithm?
+6. How would you swap two numbers without using a third variable?
+7. Reverse a string in Ruby. 
+8. How do you reverse a Linked List?
+
+
+The Top 40 Algorithms for Junior Developer Interview: 
+
+1. Binary Searches.
+2. Binary Trees. 
+3. Arrays. 
+4. How would you calculate the number of vowels and consonants in a string?
+5. How would you implement the insertion sort algorithm?
+6. How would you swap two numbers without using a third variable?
+7. Reverse a string in Ruby. 
+8. How do you reverse a Linked List?
+
+- Sorting and searching algorithms
+- String and array manipulation algorithms.
