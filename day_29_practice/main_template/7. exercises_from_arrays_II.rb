@@ -278,6 +278,7 @@ p product_of_number_and_index([]) # => 0
 puts
 
 
+
 #* Solution: Use the "each_with_index" method.
 def product_of_number_and_index(array_of_nums)
     rolling_sum = 0 
