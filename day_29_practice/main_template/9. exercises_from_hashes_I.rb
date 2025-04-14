@@ -9,7 +9,15 @@ puts "Exercise 1: Creating a Hash:"
 #* by their shared index position.
 
 #* Solution: Use "each_with_index"
+def hash_from_arrays(keys, values)
+    result = {} 
 
+    keys.each_with_index do |key, value|
+        result[key] = values[value]
+    end
+
+    result
+end
 
 
 p hash_from_arrays(["red", "green", "blue"], [1, 2, 3])   # => {"red"=>1, "green"=>2, "blue"=>3}
@@ -29,7 +37,20 @@ puts "\n\nExercise 2: Word Frequency: "
 #* be in all lowercase.
 
 #* Solution: Use the "each" method to iterate.   
+def word_frequency(text)
+    counts = {} 
+    words = text.split(" ")
 
+    words.each do |word|
+        if counts[word].nil?
+            counts[word] = 1
+        else 
+            counts[word] += 1
+        end
+    end
+
+    counts
+end
 
 
 p word_frequency("blue red blue green")  # => {"blue"=>2, "red"=>1, "green"=>1}
@@ -39,8 +60,15 @@ puts
 
 
 #* Solution: Use the Hash.new(0) class. 
+def word_frequency(text)
+    counts = Hash.new(0)
 
+    words = text.split(" ")
 
+    words.each { |word| counts[word] += 1 }
+
+    counts
+end
 
 p word_frequency("blue red blue green")  # => {"blue"=>2, "red"=>1, "green"=>1}
 p word_frequency("a land far far away")  # => {"a"=>1, "land"=>1, "far"=>2, "away"=>1}
@@ -49,7 +77,9 @@ puts
 
 
 #* Solution: Use the "tally" method. 
-
+def word_frequency(text)
+    text.split(" ").tally
+end
 
 
 p word_frequency("blue red blue green")  # => {"blue"=>2, "red"=>1, "green"=>1}
