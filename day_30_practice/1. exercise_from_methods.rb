@@ -4,9 +4,9 @@ puts "\nOptional Parameters and Default Arguments: "
 
 #* Solution: Calculate the total meal cost with the default tip percentage of 20% or 0.20.
 def calculate_meal_cost(total, tip_percentage = 0.20 )
-    total_meal_cost = total * (total * tip_percentage)
+    total_meal_cost = total + (total * tip_percentage)
 
-    puts "Total Meal Cost: $#{total_meal_cost}"
+    puts "$#{total_meal_cost}"
 end
 
 
@@ -19,7 +19,9 @@ puts
 
 
 #* Solution: String interpolation.
-
+def string_adder(string1 = "", b = "")
+    "#{string1} #{b}"
+end
 
 
 puts string_adder("Hello", "World") # => Hello World
