@@ -7,8 +7,9 @@ puts "\nString Index Position: "
 # Assume the string will always have 1 or more characters.
 
 #* Solution: Use the bracket syntax.
-
-
+def same_first_and_last_letter(string)
+    string[0] == string[-1]
+end
 
 puts same_first_and_last_letter("runner") # => true
 puts same_first_and_last_letter("Runner") # => false
@@ -23,7 +24,15 @@ puts
 # string-ified digits to integers.
 
 #* Solution: Extract elements from index: 0, 1, and 2 then convert them into integers.
+def three_number_sum(string)
+    rolling_sum = 0 
 
+    string.each_char do |char|
+        rolling_sum += char.to_i
+    end
+
+    rolling_sum
+end
 
 
 puts three_number_sum("123") # => 6
@@ -40,7 +49,9 @@ puts "\n\nString Slicing: "
 # The method should return the first 3 characters of the string.
 
 #* Solution: Use the bracket syntax.
-
+def first_three_characters(string)
+    string[0].to_s + string[1].to_s + string[2].to_s 
+end
 
 
 puts first_three_characters("dynasty") # => dyn
@@ -49,7 +60,15 @@ puts
 
 
 #* Solution: Use the each_char method.
+def first_three_characters2(string)
+    final_string = ""
 
+    string.each_char do |char|
+        final_string << char unless final_string.length > 2
+    end
+
+    final_string
+end
 
 
 puts first_three_characters2("dynasty") # => dyn
@@ -61,7 +80,9 @@ puts
 # The method should return the last 5 characters of the string.
 
 #* Solution: Use the bracket syntax.
-
+def five_from_the_end(string)
+    string[-5, 5]
+end
 
 
 puts five_from_the_end("dynasty") # => nasty
@@ -70,7 +91,9 @@ puts
 
 
 #* Solution: Use the slice method:
-
+def five_from_the_end(string)
+    string.slice(-5, 5)
+end
 
 
 puts five_from_the_end("dynasty") # => nasty
@@ -86,6 +109,9 @@ puts "\n\nString Length and Comparison: "
 # the string has more than 7 characters.
 
 #* Solution:
+def long_word1(string)
+    string.length > 7
+end
 
 
 
@@ -99,7 +125,9 @@ puts
 # and false otherwise (including if they are equal in length).
 
 #* Solution:
-
+def first_longer_than_second(string1, string2)
+    string1.length > string2.length
+end
 
 
 puts first_longer_than_second("Python", "Ruby") # => true
